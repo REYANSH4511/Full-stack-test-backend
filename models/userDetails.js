@@ -2,10 +2,6 @@ const moongose = require("mongoose");
 
 const userDetailsSchema = moongose.Schema(
   {
-    browserId: {
-      type: moongose.Types.ObjectId,
-      ref: "browserDetails",
-    },
     firstName: {
       type: String,
       required: true,

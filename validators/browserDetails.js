@@ -6,7 +6,7 @@ const Validators = {
     userAgent: Joi.string().required(),
     deviceType: Joi.string().required(),
     browserName: Joi.string().required(),
-    ipAddress: Joi.string().required(),
+    ipAddress: Joi.string(),
   }),
 };
 

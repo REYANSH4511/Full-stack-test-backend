@@ -2,16 +2,8 @@ const UserDetails = require("../models/userDetails");
 const { errorHandler, successHandler } = require("../utils/responseHandler");
 
 async function savePersonalDetails(req, res) {
-  const {
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    day,
-    month,
-    year,
-    browserId,
-  } = req.body;
+  const { firstName, lastName, email, phoneNumber, day, month, year } =
+    req.body;
   const checkDuplicate = await UserDetails.findOne({
     $or: [{ email: email }, { phoneNumber: phoneNumber }],
   });
@@ -30,7 +22,6 @@ async function savePersonalDetails(req, res) {
     day,
     month,
     year,
-    browserId,
   });
   return successHandler({
     res,

@@ -4,6 +4,15 @@ const {
   savePersonalDetails,
   saveAddressDetails,
 } = require("../controllers/userDetails");
-router.post("/personal-details", savePersonalDetails);
-router.post("/address-details", saveAddressDetails);
+const Validator = require("../validators/userDetails");
+router.post(
+  "/personal-details",
+  Validator("saveValidPersonalDetails"),
+  savePersonalDetails
+);
+router.post(
+  "/address-details",
+  Validator("saveValidAddressDetails"),
+  saveAddressDetails
+);
 module.exports = router;

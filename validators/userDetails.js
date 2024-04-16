@@ -16,7 +16,7 @@ const Validators = {
   }),
 
   saveValidAddressDetails: Joi.object({
-    userDetailsId: Joi.string.required(),
+    userDetailsId: Joi.string().required(),
     address: Joi.array()
       .items(
         Joi.object({

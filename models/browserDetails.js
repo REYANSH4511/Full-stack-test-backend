@@ -4,7 +4,7 @@ const browserDetailsSchema = new mongoose.Schema(
   {
     ipAddress: {
       type: String,
-      required: true,
+      // required: true,
     },
     deviceType: {
       type: String,
